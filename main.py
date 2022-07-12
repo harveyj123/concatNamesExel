@@ -28,7 +28,8 @@ for index, row in enumerate(ws.iter_rows(values_only=True)):
     final_name_row += 1
 
 ws.delete_cols(4)
-for row in ws.iter_rows(min_row=1,  max_row=3, values_only=True):
+
+for row in ws.iter_rows(min_row=1,  max_row=3, values_only=True):   # test
     print(row)
 
 wb.save(file_path)
