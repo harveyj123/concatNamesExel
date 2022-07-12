@@ -1,17 +1,17 @@
 from openpyxl import load_workbook
 
-file_path = 'pyscp.xlsx'
+file_path = 'pyscp.xlsx' # your exl file here
 
 wb = load_workbook(file_path)
 
 ws = wb.active
 
-ws['A1'] = "harvey"
-ws['B1'] = "jiang"
-ws['A2'] = "wilson"
-ws['B2'] = "boooochen"
-ws['A3'] = "rayn"
-ws['B3'] = "zanhe"
+# ws['A1'] = "harvey"
+# ws['B1'] = "jiang"
+# ws['A2'] = "wilson"
+# ws['B2'] = "boooochen"
+# ws['A3'] = "rayn"
+# ws['B3'] = "zanhe"
 
 final_name_row = 1
 
@@ -22,9 +22,7 @@ for index, row in enumerate(ws.iter_rows(values_only=True)):
     last_name = row[1]
     combined_name = [first_initial, last_name]
     end_string = ''.join(combined_name)
-    print(end_string)
     ws[f"C{final_name_row}"] = end_string
-    print(final_name_row)
     final_name_row += 1
 
 ws.delete_cols(4)
