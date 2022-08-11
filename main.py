@@ -25,9 +25,10 @@ class Excel:
     def concat_names(self, first_initial_row: int = 0, last_name_row: int = 1, max_rows: int= 4, ending_col: int = 3):
 
         for index, row in enumerate(self.ws.iter_rows(values_only=True)):
+           
             first_initial = row[first_initial_row][first_initial_row]
             last_name = row[last_name_row]
-            combined_name = [first_initial, last_name]
+            combined_name = [first_initial, last_name, '22']
             end_string = ''.join(combined_name)
             self.ws[f"C{self.final_name_row}"] = end_string
             self.final_name_row += 1
@@ -41,8 +42,8 @@ class Excel:
             print(row)
 
 
-# test = Excel('pyscp.xlsx')
-# test.concat_names()
+test = Excel('pyscp.xlsx')
+test.concat_names()
 # print(test.test_concat())
 
 
