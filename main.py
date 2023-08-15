@@ -28,7 +28,7 @@ class Excel:
            
             first_initial = row[first_initial_row]
             last_name = row[last_name_row]
-            combined_name = [first_initial,'.', last_name]
+            combined_name = [first_initial,'.',last_name,'23']
             end_string = ''.join(combined_name)
             self.ws[f"C{self.final_name_row}"] = end_string
             self.final_name_row += 1
